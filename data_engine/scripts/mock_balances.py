@@ -7,7 +7,7 @@ def generate_balances(ref_date: date):
     balance_ref_date = ref_date - timedelta(days=1)
     balances_data = []
 
-    csv_dir = "config/support_files/csv"
+    csv_dir = "./config/support_files/csv"
     os.makedirs(csv_dir, exist_ok=True)
 
     clients_path = os.path.join(csv_dir, "clients.csv")

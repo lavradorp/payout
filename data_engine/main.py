@@ -1,8 +1,6 @@
 from datetime import date
 import warnings
 import os
-import duckdb
-from pathlib import Path
 import polars as pl
 from endpoints.fixings import Fixings
 from scripts.mock_balances import generate_balances

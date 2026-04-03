@@ -27,7 +27,7 @@ class DataManager:
         
         return pl.read_parquet(file_path)
     
-    def save_duckdb(self, df: pl.DataFrame, table_name: str, ref_date: date, db_path: str = 'config/db/duckdb/balances_payout.duckdb'):
+    def save_duckdb(self, df: pl.DataFrame, table_name: str, ref_date: date, db_path: str = './config/db/duckdb/balances_payout.duckdb'):
         with duckdb.connect(db_path) as con:
             con.execute(f"CREATE TABLE IF NOT EXISTS {table_name} AS SELECT * FROM df LIMIT 0")
             

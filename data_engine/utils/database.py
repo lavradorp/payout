@@ -3,7 +3,7 @@ import polars as pl
 from utils.db_config import DatabaseConfig
 
 class DB(DatabaseConfig):
-    def __init__(self, config_path: str = "config/support_files/yml/postgresql.yml"):
+    def __init__(self, config_path: str = "./config/support_files/yml/postgresql.yml"):
         super().__init__(config_path)
         self.connection_uri = self.get_connection_uri()
 

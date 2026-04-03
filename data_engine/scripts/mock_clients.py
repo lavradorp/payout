@@ -29,7 +29,7 @@ def generate_mock_clients(num_clients: int = 20):
 
     df_clients = pl.DataFrame(clients_data)
     
-    output_dir = "config/support_files"
+    output_dir = "./config/support_files"
     os.makedirs(output_dir, exist_ok=True)
     clients_path = os.path.join(output_dir, "clients.csv")
 
