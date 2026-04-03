@@ -1,0 +1,23 @@
+# Nomeie este arquivo conforme banco de dados a ser usado e preencha com suas credenciais.
+# Exemplo, caso o seja postgresql, nomeie para postgresql.yml
+
+database:
+  # Opções suportadas: postgresql, mysql, sqlserver, oracle, redshift, sqlite, redis
+  engine: "postgresql" 
+  
+  # O caminho do host (ex: localhost, ou o endpoint do AWS RDS)
+  host: "my-db.rds.amazonaws.com"
+  
+  # Portas padrão: 
+  # PostgreSQL/Redshift: 5432
+  # MySQL: 3306
+  # SQL Server: 1433
+  # Oracle: 1521
+  # Redis: 6379
+  port: 5432
+  
+  user: "admin"
+  password: "super_secret_password" 
+  
+  # Nome do banco ou caminho do arquivo (se for sqlite)
+  db_name: "some_db_name"

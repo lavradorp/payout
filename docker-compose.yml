@@ -1,0 +1,30 @@
+services:
+  postgres_db:
+    image: postgres:15-alpine
+    container_name: yield_engine_postgres
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: wvnnowk39mjS1
+      POSTGRES_DB: yield_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./config/db/queries:/docker-entrypoint-initdb.d
+      - ./config/support_files:/support_files
+      - pg_data:/var/lib/postgresql/data
+
+  redis:
+    image: redis:7-alpine
+    container_name: yield_engine_redis
+    ports:
+      - "6379:6379"
+  payout_api:
+    image: payout-api:latest
+    container_name: payout-api
+    ports:
+      - "8080:8080"
+    depends_on:
+      - redis
+
+volumes:
+  pg_data:
